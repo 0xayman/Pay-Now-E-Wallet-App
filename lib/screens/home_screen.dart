@@ -65,269 +65,273 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: 262.h,
-                width: 375.w,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
+    return Column(
+      children: [
+        Stack(
+          children: [
+            Container(
+              height: 262.h,
+              width: 375.w,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
               ),
-              CustomPaint(
-                size: Size(375.w, 262.h),
-                painter: DrawTriangleShape(),
-              ),
-              Positioned(
-                top: 48.h,
-                width: 375.w,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Dashboard",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      CircleAvatar(
-                        radius: 20.w,
-                        backgroundImage: const AssetImage(
-                            "assets/images/Profile Picture.png"),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 120.h,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                  child: Text(
-                    "Hi, Amanda!",
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(0.5),
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 152.h,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                  child: Text(
-                    "Total Balance",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 190.h,
-                width: 375.w,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        "\$124.57",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          SizedBox(
-                            width: 24.w,
-                            height: 24.h,
-                            child: FittedBox(
-                              child: SvgPicture.asset(
-                                "assets/images/notifications_icon.svg",
-                              ),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Positioned(
-                            right: 3.07.w,
-                            top: -4.h,
-                            child: Container(
-                              height: 10.h,
-                              width: 10.w,
-                              decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.secondary,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const VerticalSpacer(height: 32),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 49.h,
-                        width: 165.w,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.secondary,
-                          borderRadius: BorderRadius.circular(10.w),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 21.w,
-                              height: 21.h,
-                              child: FittedBox(
-                                child: SvgPicture.asset(
-                                  "assets/images/send_icon.svg",
-                                ),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            const HorizontalSpacer(width: 4),
-                            Text(
-                              "Send Money",
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 49.h,
-                        width: 165.w,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.primary,
-                          borderRadius: BorderRadius.circular(10.w),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 21.w,
-                              height: 21.h,
-                              child: FittedBox(
-                                child: SvgPicture.asset(
-                                  "assets/images/request_icon.svg",
-                                ),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            const HorizontalSpacer(width: 4),
-                            Text(
-                              "Request Money",
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                const VerticalSpacer(height: 32),
-                Row(
+            ),
+            CustomPaint(
+              size: Size(375.w, 262.h),
+              painter: DrawTriangleShape(),
+            ),
+            Positioned(
+              top: 48.h,
+              width: 375.w,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Last Transactions",
+                      "Dashboard",
                       style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16.sp,
+                        color: Colors.white,
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        "View All",
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                      ),
-                    )
+                    CircleAvatar(
+                      radius: 20.w,
+                      backgroundImage:
+                          const AssetImage("assets/images/Profile Picture.png"),
+                    ),
                   ],
                 ),
-                const VerticalSpacer(height: 16),
-                transations.isNotEmpty
-                    ? ListView.separated(
-                        padding: EdgeInsets.zero,
-                        itemCount: transations.length,
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        separatorBuilder: (context, index) =>
-                            const VerticalSpacer(
-                          height: 16,
+              ),
+            ),
+            Positioned(
+              top: 120.h,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                child: Text(
+                  "Hi, Amanda!",
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.5),
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 152.h,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                child: Text(
+                  "Total Balance",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 190.h,
+              width: 375.w,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "\$124.57",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        SizedBox(
+                          width: 24.w,
+                          height: 24.h,
+                          child: FittedBox(
+                            child: SvgPicture.asset(
+                              "assets/images/notifications_icon.svg",
+                            ),
+                            fit: BoxFit.fill,
+                          ),
                         ),
-                        itemBuilder: (context, index) => TransactionCard(
-                          transaction: transations[index],
+                        Positioned(
+                          right: 3.07.w,
+                          top: -4.h,
+                          child: Container(
+                            height: 10.h,
+                            width: 10.w,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.secondary,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
                         ),
-                      )
-                    : SizedBox(
-                        width: 375.w,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const VerticalSpacer(height: 73),
-                            SvgPicture.asset(
-                                "assets/images/empty_illustration.svg"),
-                            Text(
-                              "There’s no transactions till now!",
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black.withOpacity(0.5),
-                              ),
-                            )
-                          ],
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+        const VerticalSpacer(height: 32),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 49.h,
+                  width: 165.w,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondary,
+                    borderRadius: BorderRadius.circular(10.w),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 21.w,
+                        height: 21.h,
+                        child: FittedBox(
+                          child: SvgPicture.asset(
+                            "assets/images/send_icon.svg",
+                          ),
+                          fit: BoxFit.fill,
                         ),
                       ),
-              ],
+                      const HorizontalSpacer(width: 4),
+                      Text(
+                        "Send Money",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 49.h,
+                  width: 165.w,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
+                    borderRadius: BorderRadius.circular(10.w),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 21.w,
+                        height: 21.h,
+                        child: FittedBox(
+                          child: SvgPicture.asset(
+                            "assets/images/request_icon.svg",
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      const HorizontalSpacer(width: 4),
+                      Text(
+                        "Request Money",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        const VerticalSpacer(height: 32),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Last Transactions",
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16.sp,
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Text(
+                  "View All",
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        ..._buildTransactionsList(),
+      ],
+    );
+  }
+
+  List<Widget> _buildTransactionsList() {
+    if (transations.isNotEmpty) {
+      return [
+        const VerticalSpacer(height: 16),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
+              child: ListView.separated(
+                padding: EdgeInsets.zero,
+                itemCount: transations.length,
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                separatorBuilder: (context, index) => const VerticalSpacer(
+                  height: 16,
+                ),
+                itemBuilder: (context, index) => TransactionCard(
+                  transaction: transations[index],
+                ),
+              ),
             ),
           ),
-        ],
-      ),
-    );
+        )
+      ];
+    } else {
+      return [
+        const VerticalSpacer(height: 89),
+        SvgPicture.asset("assets/images/empty_illustration.svg"),
+        const VerticalSpacer(height: 16),
+        Text(
+          "There’s no transactions till now!",
+          style: TextStyle(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w500,
+            color: Colors.black.withOpacity(0.5),
+          ),
+        )
+      ];
+    }
   }
 }
 
@@ -397,11 +401,39 @@ class TransactionCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CircleAvatar(
-            radius: 20.w,
-            backgroundColor: const Color(0xFFF3F4F5),
-            backgroundImage:
-                AssetImage("assets/images/${transaction.userImage}"),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              CircleAvatar(
+                radius: 20.w,
+                backgroundColor: const Color(0xFFF3F4F5),
+                backgroundImage:
+                    AssetImage("assets/images/${transaction.userImage}"),
+              ),
+              Positioned(
+                left: 25.w,
+                top: 25.h,
+                child: Container(
+                  width: 24.w,
+                  height: 24.h,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Center(
+                    child: transaction.transactionType == TransactionType.send
+                        ? SvgPicture.asset(
+                            'assets/images/send_icon.svg',
+                            color: Theme.of(context).colorScheme.secondary,
+                          )
+                        : SvgPicture.asset(
+                            'assets/images/request_icon.svg',
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                  ),
+                ),
+              ),
+            ],
           ),
           const HorizontalSpacer(width: 17),
           Column(
