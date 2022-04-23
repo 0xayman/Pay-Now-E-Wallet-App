@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pay_now/widgets/horizontal_spacer.dart';
+import 'package:pay_now/widgets/primary_button.dart';
 import 'package:pay_now/widgets/vertical_spacer.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -41,7 +42,7 @@ class OnBoardingHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 370.w,
+      width: 375.w,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Row(
@@ -140,29 +141,10 @@ class PaymentsPage extends StatelessWidget {
         ),
         Positioned(
           bottom: 32.h,
-          width: 370.w,
+          width: 375.w,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: InkWell(
-              onTap: () {},
-              child: Container(
-                height: 49.h,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
-                  borderRadius: BorderRadius.circular(10.w),
-                ),
-                child: Center(
-                  child: Text(
-                    "Get Started",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            child: const PrimaryButton(text: "Get Started"),
           ),
         ),
       ],
