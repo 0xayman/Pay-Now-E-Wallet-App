@@ -65,301 +65,267 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Stack(
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              Container(
+                height: 262.h,
+                width: 375.w,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+              CustomPaint(
+                size: Size(375.w, 262.h),
+                painter: DrawTriangleShape(),
+              ),
+              Positioned(
+                top: 48.h,
+                width: 375.w,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Dashboard",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      CircleAvatar(
+                        radius: 20.w,
+                        backgroundImage: const AssetImage(
+                            "assets/images/Profile Picture.png"),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 120.h,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  child: Text(
+                    "Hi, Amanda!",
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.5),
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 152.h,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  child: Text(
+                    "Total Balance",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 190.h,
+                width: 375.w,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "\$124.57",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          SizedBox(
+                            width: 24.w,
+                            height: 24.h,
+                            child: FittedBox(
+                              child: SvgPicture.asset(
+                                "assets/images/notifications_icon.svg",
+                              ),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Positioned(
+                            right: 3.07.w,
+                            top: -4.h,
+                            child: Container(
+                              height: 10.h,
+                              width: 10.w,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).colorScheme.secondary,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const VerticalSpacer(height: 32),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  height: 262.h,
-                  width: 375.w,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-                CustomPaint(
-                  size: Size(375.w, 262.h),
-                  painter: DrawTriangleShape(),
-                ),
-                Positioned(
-                  top: 48.h,
-                  width: 375.w,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Dashboard",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w500,
-                          ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 49.h,
+                        width: 165.w,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.secondary,
+                          borderRadius: BorderRadius.circular(10.w),
                         ),
-                        CircleAvatar(
-                          radius: 20.w,
-                          backgroundImage: const AssetImage(
-                              "assets/images/Profile Picture.png"),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 120.h,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: Text(
-                      "Hi, Amanda!",
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.5),
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 152.h,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: Text(
-                      "Total Balance",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 190.h,
-                  width: 375.w,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          "\$124.57",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 40.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        Stack(
-                          clipBehavior: Clip.none,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
-                              width: 24.w,
-                              height: 24.h,
+                              width: 21.w,
+                              height: 21.h,
                               child: FittedBox(
                                 child: SvgPicture.asset(
-                                  "assets/images/notifications_icon.svg",
+                                  "assets/images/send_icon.svg",
                                 ),
                                 fit: BoxFit.fill,
                               ),
                             ),
-                            Positioned(
-                              right: 3.07.w,
-                              top: -4.h,
-                              child: Container(
-                                height: 10.h,
-                                width: 10.w,
-                                decoration: BoxDecoration(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
-                                  shape: BoxShape.circle,
-                                ),
+                            const HorizontalSpacer(width: 4),
+                            Text(
+                              "Send Money",
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            const VerticalSpacer(height: 32),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          height: 49.h,
-                          width: 165.w,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.secondary,
-                            borderRadius: BorderRadius.circular(10.w),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 21.w,
-                                height: 21.h,
-                                child: FittedBox(
-                                  child: SvgPicture.asset(
-                                    "assets/images/send_icon.svg",
-                                  ),
-                                  fit: BoxFit.fill,
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 49.h,
+                        width: 165.w,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          borderRadius: BorderRadius.circular(10.w),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: 21.w,
+                              height: 21.h,
+                              child: FittedBox(
+                                child: SvgPicture.asset(
+                                  "assets/images/request_icon.svg",
                                 ),
+                                fit: BoxFit.fill,
                               ),
-                              const HorizontalSpacer(width: 4),
-                              Text(
-                                "Send Money",
-                                style: TextStyle(
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                            ),
+                            const HorizontalSpacer(width: 4),
+                            Text(
+                              "Request Money",
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          height: 49.h,
-                          width: 165.w,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary,
-                            borderRadius: BorderRadius.circular(10.w),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 21.w,
-                                height: 21.h,
-                                child: FittedBox(
-                                  child: SvgPicture.asset(
-                                    "assets/images/request_icon.svg",
-                                  ),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              const HorizontalSpacer(width: 4),
-                              Text(
-                                "Request Money",
-                                style: TextStyle(
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  const VerticalSpacer(height: 32),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Last Transactions",
+                    )
+                  ],
+                ),
+                const VerticalSpacer(height: 32),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Last Transactions",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: Text(
+                        "View All",
                         style: TextStyle(
-                          fontWeight: FontWeight.w700,
                           fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
-                      InkWell(
-                        onTap: () {},
-                        child: Text(
-                          "View All",
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
+                    )
+                  ],
+                ),
+                const VerticalSpacer(height: 16),
+                transations.isNotEmpty
+                    ? ListView.separated(
+                        padding: EdgeInsets.zero,
+                        itemCount: transations.length,
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        separatorBuilder: (context, index) =>
+                            const VerticalSpacer(
+                          height: 16,
+                        ),
+                        itemBuilder: (context, index) => TransactionCard(
+                          transaction: transations[index],
                         ),
                       )
-                    ],
-                  ),
-                  const VerticalSpacer(height: 16),
-                  ListView.separated(
-                    padding: EdgeInsets.zero,
-                    itemCount: transations.length,
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    separatorBuilder: (context, index) => const VerticalSpacer(
-                      height: 16,
-                    ),
-                    itemBuilder: (context, index) => TransactionCard(
-                      transaction: transations[index],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: Container(
-        height: 102.h,
-        width: 375.w,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.w),
-            topRight: Radius.circular(20.w),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.03),
-              offset: const Offset(0, -10),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: Center(
-          child: Container(
-            height: 70.h,
-            width: 343.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.w),
-              color: const Color(0xFFF3F4F5),
-            ),
-            child: Row(
-              children: const [
-                NavigationButton(
-                  isActive: true,
-                  title: 'Home',
-                  icon: 'home_icon',
-                ),
-                NavigationButton(
-                  isActive: false,
-                  title: 'Transactions',
-                  icon: 'arrows_icon',
-                ),
-                NavigationButton(
-                  isActive: false,
-                  title: 'Contacts',
-                  icon: 'contacts_icon',
-                ),
-                NavigationButton(
-                  isActive: false,
-                  title: 'Profile',
-                  icon: 'user_icon',
-                ),
+                    : SizedBox(
+                        width: 375.w,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const VerticalSpacer(height: 73),
+                            SvgPicture.asset(
+                                "assets/images/empty_illustration.svg"),
+                            Text(
+                              "There’s no transactions till now!",
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black.withOpacity(0.5),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
               ],
             ),
           ),
-        ),
+        ],
       ),
     );
   }
