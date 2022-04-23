@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pay_now/screens/home_screen.dart';
 import 'package:pay_now/screens/signup_screen.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           )),
           fontFamily: 'SF-Pro-Rounded',
         ),
-        home: const SignupScreen(),
+        home: HomeScreen(),
       ),
     );
   }

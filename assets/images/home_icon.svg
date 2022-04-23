@@ -1,0 +1,9 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="home_icon">
+<rect id="Rectangle" opacity="0.01" width="20" height="20" fill="white"/>
+<g id="Shape">
+<path id="Path" d="M2 7.80159L9.85714 3L17.7143 7.80159" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Path_2" d="M3.96429 6.52116V15.9762C3.96429 16.7651 4.60389 17.4048 5.39287 17.4048H14.3214C15.1104 17.4048 15.75 16.7651 15.75 15.9762V6.52116" stroke="black" stroke-width="2"/>
+</g>
+</g>
+</svg>
