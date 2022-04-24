@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pay_now/screens/contacts_screen.dart';
 import 'package:pay_now/screens/home_screen.dart';
+import 'package:pay_now/screens/profile_screen.dart';
 import 'package:pay_now/screens/transactions_screen.dart';
 import 'package:pay_now/widgets/vertical_spacer.dart';
 
@@ -51,12 +52,13 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  int currentScreenIndex = 2;
+  int currentScreenIndex = 3;
 
   final screens = [
     HomeScreen(),
     TransactionsScreen(),
     ContactsScreen(),
+    const ProfileScreen(),
   ];
 
   @override
