@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pay_now/screens/contacts_screen.dart';
 import 'package:pay_now/screens/home_screen.dart';
 import 'package:pay_now/screens/profile_screen.dart';
+import 'package:pay_now/screens/send_money_screen.dart';
 import 'package:pay_now/screens/transactions_screen.dart';
 import 'package:pay_now/widgets/vertical_spacer.dart';
 
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           )),
           fontFamily: 'SF-Pro-Rounded',
         ),
-        home: const App(),
+        home: const SendMoneyScreen(),
       ),
     );
   }
