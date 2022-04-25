@@ -5,8 +5,8 @@ import 'package:pay_now/widgets/horizontal_spacer.dart';
 import 'package:pay_now/widgets/primary_button.dart';
 import 'package:pay_now/widgets/vertical_spacer.dart';
 
-class SendMoneyScreen extends StatelessWidget {
-  const SendMoneyScreen({Key? key}) : super(key: key);
+class RequestMoneyScreen extends StatelessWidget {
+  const RequestMoneyScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class SendMoneyScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Send Money",
+                    "Request Money",
                     style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w500,
@@ -68,16 +68,8 @@ class SendMoneyScreen extends StatelessWidget {
                       CircleAvatar(
                         backgroundColor: const Color(0xFFF3F4F5),
                         radius: 30.w,
-                        child: Center(
-                          child: Text(
-                            "Y",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.sp,
-                              color: const Color(0xFF1A1A1A),
-                            ),
-                          ),
-                        ),
+                        backgroundImage:
+                            const AssetImage('assets/images/reem.png'),
                       ),
                       const HorizontalSpacer(width: 12),
                       Column(
@@ -85,7 +77,7 @@ class SendMoneyScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Yara Khalil",
+                            "Reem Khaled",
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: const Color(0xFF1A1A1A),
@@ -93,7 +85,7 @@ class SendMoneyScreen extends StatelessWidget {
                           ),
                           const VerticalSpacer(height: 1),
                           Text(
-                            "yara_khalil@gmail.com",
+                            "reem_1993@gmail.com",
                             style: TextStyle(
                               fontSize: 12.sp,
                               color: const Color(0xFF1A1A1A).withOpacity(0.4),
@@ -116,9 +108,9 @@ class SendMoneyScreen extends StatelessWidget {
                     keyboardType: TextInputType.number,
                     style: TextStyle(
                       fontSize: 14.sp,
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
-                    cursorColor: Theme.of(context).colorScheme.secondary,
+                    cursorColor: Theme.of(context).colorScheme.primary,
                     decoration: InputDecoration(
                       hintText: "Enter amount",
                       hintStyle: TextStyle(
@@ -137,7 +129,7 @@ class SendMoneyScreen extends StatelessWidget {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.w),
                         borderSide: BorderSide(
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context).colorScheme.primary,
                           width: 1.sp,
                         ),
                       ),
@@ -159,7 +151,7 @@ class SendMoneyScreen extends StatelessWidget {
                     ),
                     minLines: 8,
                     maxLines: 8,
-                    cursorColor: Theme.of(context).colorScheme.secondary,
+                    cursorColor: Theme.of(context).colorScheme.primary,
                     decoration: InputDecoration(
                       hintText: "Add payment note",
                       hintStyle: TextStyle(
@@ -178,7 +170,7 @@ class SendMoneyScreen extends StatelessWidget {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.w),
                         borderSide: BorderSide(
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context).colorScheme.primary,
                           width: 1.sp,
                         ),
                       ),
@@ -215,7 +207,7 @@ class SendMoneyScreen extends StatelessWidget {
               width: 345.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.w),
-                color: Theme.of(context).colorScheme.secondary,
+                color: Theme.of(context).colorScheme.primary,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -225,17 +217,18 @@ class SendMoneyScreen extends StatelessWidget {
                     height: 21.h,
                     child: FittedBox(
                       child: SvgPicture.asset(
-                        "assets/images/send_icon.svg",
+                        "assets/images/request_icon.svg",
                       ),
                       fit: BoxFit.fill,
                     ),
                   ),
                   const HorizontalSpacer(width: 4),
                   Text(
-                    "Send Payment",
+                    "Request Payment",
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
+                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -276,7 +269,7 @@ class SendMoneyScreen extends StatelessWidget {
                 ),
                 const VerticalSpacer(height: 35),
                 Text(
-                  "The amount has been sent successfully!",
+                  "The amount has been requested successfully!",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20.sp,
