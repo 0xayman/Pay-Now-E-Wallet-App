@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pay_now/screens/add_card_screen.dart';
 import 'package:pay_now/widgets/horizontal_spacer.dart';
 import 'package:pay_now/widgets/vertical_spacer.dart';
 
@@ -17,8 +16,8 @@ class Card {
   });
 }
 
-class CardsScreen extends StatelessWidget {
-  CardsScreen({Key? key}) : super(key: key);
+class AddCardScreen extends StatelessWidget {
+  AddCardScreen({Key? key}) : super(key: key);
 
   final List<Card> cards = [
     Card(
@@ -65,87 +64,34 @@ class CardsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    width: 24.w,
-                    height: 24.h,
-                    child: FittedBox(
-                      child: SvgPicture.asset(
-                        'assets/images/back_icon.svg',
-                      ),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  Text(
-                    "My Cards",
-                    style: TextStyle(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => AddCardScreen(),
-                        ),
-                      );
+                      Navigator.of(context).pop();
                     },
                     child: SizedBox(
                       width: 24.w,
                       height: 24.h,
                       child: FittedBox(
                         child: SvgPicture.asset(
-                          'assets/images/add_icon.svg',
-                          color: Theme.of(context).colorScheme.primary,
+                          'assets/images/back_icon.svg',
                         ),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
+                  Text(
+                    "Add Card",
+                    style: TextStyle(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 24.w,
+                    height: 24.h,
+                  ),
                 ],
               ),
-            ),
-            const VerticalSpacer(height: 24),
-            SizedBox(
-              height: 170.h,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => PaymentCard(
-                  card: cards[index],
-                ),
-                separatorBuilder: (context, index) =>
-                    const HorizontalSpacer(width: 15),
-                itemCount: cards.length,
-              ),
-            ),
-            const VerticalSpacer(height: 7),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 6.w,
-                  height: 6.h,
-                  decoration: BoxDecoration(
-                      color: const Color(0xFF8FA1B4).withOpacity(0.2965),
-                      shape: BoxShape.circle),
-                ),
-                const HorizontalSpacer(width: 6),
-                Container(
-                  width: 8.w,
-                  height: 8.h,
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
-                      shape: BoxShape.circle),
-                ),
-                const HorizontalSpacer(width: 6),
-                Container(
-                  width: 6.w,
-                  height: 6.h,
-                  decoration: BoxDecoration(
-                      color: const Color(0xFF8FA1B4).withOpacity(0.2965),
-                      shape: BoxShape.circle),
-                ),
-              ],
             ),
             const VerticalSpacer(height: 32),
             Padding(
@@ -361,56 +307,30 @@ class CardsScreen extends StatelessWidget {
             ),
           ],
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            InkWell(
-              child: Container(
-                height: 49.h,
-                width: 281.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.w),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Save Changes",
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
+        child: Center(
+          child: InkWell(
+            child: Container(
+              height: 49.h,
+              width: 345.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.w),
+                color: Theme.of(context).colorScheme.primary,
               ),
-            ),
-            const HorizontalSpacer(width: 15),
-            InkWell(
-              child: Container(
-                height: 49.h,
-                width: 49.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.w),
-                  color: const Color(0xFFFB3640),
-                ),
-                child: Center(
-                  child: SizedBox(
-                    width: 24.w,
-                    height: 24.h,
-                    child: FittedBox(
-                      child: SvgPicture.asset(
-                        'assets/images/remove_icon.svg',
-                      ),
-                      fit: BoxFit.fill,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Submit Card",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
                     ),
                   ),
-                ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
