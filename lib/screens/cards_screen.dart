@@ -86,7 +86,7 @@ class CardsScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => AddCardScreen(),
+                          builder: (context) => const AddCardScreen(),
                         ),
                       );
                     },

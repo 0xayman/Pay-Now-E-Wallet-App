@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pay_now/widgets/horizontal_spacer.dart';
 import 'package:pay_now/widgets/vertical_spacer.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
