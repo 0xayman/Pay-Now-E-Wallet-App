@@ -5,6 +5,7 @@ import 'package:pay_now/screens/cards_screen.dart';
 import 'package:pay_now/screens/contacts_screen.dart';
 import 'package:pay_now/screens/home_screen.dart';
 import 'package:pay_now/screens/profile_screen.dart';
+import 'package:pay_now/screens/reset_password_screen.dart';
 import 'package:pay_now/screens/transactions_screen.dart';
 import 'package:pay_now/widgets/vertical_spacer.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           )),
           fontFamily: 'SF-Pro-Rounded',
         ),
-        home: CardsScreen(),
+        home: const ResetPasswordScreen(),
       ),
     );
   }
