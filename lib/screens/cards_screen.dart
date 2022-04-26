@@ -365,6 +365,7 @@ class CardsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             InkWell(
+              onTap: () {},
               child: Container(
                 height: 49.h,
                 width: 281.w,
@@ -389,6 +390,7 @@ class CardsScreen extends StatelessWidget {
             ),
             const HorizontalSpacer(width: 15),
             InkWell(
+              onTap: () => _showConfimrationDialog(context),
               child: Container(
                 height: 49.h,
                 width: 49.w,
@@ -411,6 +413,102 @@ class CardsScreen extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  _showConfimrationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        insetPadding: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.w),
+        ),
+        child: SizedBox(
+          height: 373.h,
+          width: 327.w,
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10.w,
+            ),
+            child: Column(
+              children: [
+                const VerticalSpacer(height: 40),
+                SizedBox(
+                  width: 240.w,
+                  height: 180.h,
+                  child: FittedBox(
+                    child: SvgPicture.asset(
+                        'assets/images/remove_illustration.svg'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                const VerticalSpacer(height: 24),
+                Text(
+                  "Are you sure to remove this card?",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.sp,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const VerticalSpacer(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        height: 49.h,
+                        width: 148.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.w),
+                          color: Colors.transparent,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Cancel",
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        height: 49.h,
+                        width: 148.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.w),
+                          color: const Color(0xFFFB3640),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Remove",
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
